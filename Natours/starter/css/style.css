@@ -22,7 +22,9 @@ body {
     padding: 30px;
 }
 
+/* header */
 .header {
+    position: relative;
     height: 95vh;
     background:
         linear-gradient(
@@ -33,4 +35,45 @@ body {
         top;
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+}
+
+/* logo */
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+/* heading */
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main,
+.heading-primary-sub {
+    display: block;
+    font-weight: 400;
+}
+
+.heading-primary-main {
+    font-size: 60px;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    font-size: 20px;
+    letter-spacing: 22px;
+
 }

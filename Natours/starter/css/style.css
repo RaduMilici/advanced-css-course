@@ -7,23 +7,25 @@ Dark green: #28b485
 
 */
 
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 html {
-    font-size: 10px;
+    font-size: 62.5%;
 }
 
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    /*font-size: 16px;*/
     line-height: 1.7;
     color: #777;
     padding: 3rem;
+    box-sizing: border-box;
 }
 
 /* header */
@@ -95,6 +97,7 @@ body {
     border-radius: 10rem;
     transition: all 0.2s ease-in;
     position: relative;
+    font-size: 1.6rem;
 }
 
 .btn:hover {
@@ -102,7 +105,7 @@ body {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.btn:after {
+.btn::after {
     content: '';
     display: inline-block;
     height: 100%;
@@ -125,7 +128,7 @@ body {
     padding: 1.5rem 4rem;
 }
 
-.btn-white:after {
+.btn-white::after {
     background-color: #fff;
 }
 
@@ -136,7 +139,7 @@ body {
 }
 
 /* button animation */
-.btn:hover:after {
+.btn:hover::after {
     transition: all 0.4s ease-in;
     transform: scale(1.5, 1.7);
     opacity: 0;

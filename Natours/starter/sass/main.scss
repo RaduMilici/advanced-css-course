@@ -3,6 +3,7 @@ $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 $color-grey-dark: #777;
 $color-white: #fff;
+$color-black: #000;
 
 *,
 *::after,
@@ -38,27 +39,27 @@ body {
     top;
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-}
 
-/* logo */
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+  &__logo {
+    height: 3.5rem;
 
-.header__logo {
-  height: 3.5rem;
+    &-box {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+    }
+  }
+
+  &__text-box {
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* heading */
-.header__text-box {
-  position: absolute;
-  text-align: center;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .heading-primary {
   color: $color-white;
@@ -99,7 +100,7 @@ body {
 
 .btn:hover {
   transform: translateY(-0.5rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 }
 
 .btn::after {
@@ -116,7 +117,7 @@ body {
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
 }
 
 .btn--white {
@@ -142,38 +143,26 @@ body {
   opacity: 0;
 }
 
-@keyframes moveInLeft {
+@mixin moveIn ($from) {
   0% {
     opacity: 0;
-    transform: translateX(-10rem);
+    transform: $from
   }
 
   100% {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+@keyframes moveInLeft {
+  @include moveIn(translateX(-10rem));
 }
 
 @keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+  @include moveIn(translateX(10rem));
 }
 
 @keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+  @include moveIn(translateY(3rem));
 }

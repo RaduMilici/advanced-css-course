@@ -65,13 +65,9 @@ body {
   text-transform: uppercase;
   margin-bottom: 6rem;
 
-  &--main,
-  &--sub {
+  &--main {
     display: block;
     font-weight: 400;
-  }
-
-  &--main {
     font-size: 6rem;
     letter-spacing: 3.5rem;
     padding-left: 3.5rem;
@@ -79,6 +75,8 @@ body {
   }
 
   &--sub {
+    display: block;
+    font-weight: 300;
     font-size: 2rem;
     letter-spacing: 2.2rem;
     padding-left: 2.2rem;
@@ -87,59 +85,60 @@ body {
 }
 
 /* button */
-.btn:any-link {
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all 0.2s ease-in;
-  position: relative;
-  font-size: 1.6rem;
-}
+.btn {
+  &:any-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s ease-in;
+    position: relative;
+    font-size: 1.6rem;
 
-.btn:hover {
-  transform: translateY(-0.5rem);
-  box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
-}
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 
-.btn::after {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+      &::after {
+        transition: all 0.4s ease-in;
+        transform: scale(1.5, 1.7);
+        opacity: 0;
+      }
+    }
 
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
-}
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
 
-.btn--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-  padding: 1.5rem 4rem;
-}
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
+  }
 
-.btn--white::after {
-  background-color: $color-white;
-}
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    padding: 1.5rem 4rem;
 
-.btn--animated {
-  animation: moveInBottom 0.5s ease-in;
-  animation-delay: 0.4s;
-  animation-fill-mode: backwards;
-}
+    &::after {
+      background-color: $color-white;
+    }
+  }
 
-/* button animation */
-.btn:hover::after {
-  transition: all 0.4s ease-in;
-  transform: scale(1.5, 1.7);
-  opacity: 0;
+  &--animated {
+    animation: moveInBottom 0.5s ease-in;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+  }
 }
 
 @mixin moveIn ($from) {

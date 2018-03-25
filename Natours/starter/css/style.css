@@ -1,3 +1,27 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
 *,
 *::after,
 *::before {
@@ -9,34 +33,15 @@ html {
   font-size: 62.5%; }
 
 body {
+  box-sizing: border-box; }
+
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
-  box-sizing: border-box; }
+  padding: 3rem; }
 
-/* header */
-.header {
-  position: relative;
-  height: 95vh;
-  background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg") top;
-  background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); }
-  .header__text-box {
-    position: absolute;
-    text-align: center;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-  .header__logo {
-    height: 3.5rem; }
-    .header__logo-box {
-      position: absolute;
-      top: 4rem;
-      left: 4rem; }
-
-/* heading */
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
@@ -56,7 +61,6 @@ body {
     padding-left: 2.2rem;
     animation: moveInRight 1s ease-out; }
 
-/* button */
 .btn:any-link {
   text-transform: uppercase;
   text-decoration: none;
@@ -98,26 +102,21 @@ body {
   animation-delay: 0.4s;
   animation-fill-mode: backwards; }
 
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
+.header {
+  position: relative;
+  height: 95vh;
+  background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg) top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); }
+  .header__text-box {
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .header__logo {
+    height: 3.5rem; }
+    .header__logo-box {
+      position: absolute;
+      top: 4rem;
+      left: 4rem; }

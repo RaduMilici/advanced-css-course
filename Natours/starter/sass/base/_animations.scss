@@ -1,0 +1,13 @@
+@import "../abstracts/mixins";
+
+@keyframes moveInLeft {
+  @include moveIn(translateX(-10rem));
+}
+
+@keyframes moveInRight {
+  @include moveIn(translateX(10rem));
+}
+
+@keyframes moveInBottom {
+  @include moveIn(translateY(3rem));
+}

@@ -1,0 +1,12 @@
+@import "variables";
+
+%grid-item {
+  color: white;
+  background-color: $color-grey-dark;
+  float: left;
+  border: 1px solid black;
+
+  &:not(:last-child) {
+    margin-right: $gutter-horizontal;
+  }
+}
